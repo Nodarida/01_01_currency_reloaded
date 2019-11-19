@@ -1,6 +1,6 @@
 /*
  * CURRENCY CONVERTER RELOADED
- * Author: <your name here>
+ * Author: <Noah Mantel>
  * ---------------------------
  *
  * This converts currencies...somehow.
@@ -37,3 +37,32 @@ if (args.length < 3) {
   originalCurrency = args[1];
   targetCurrency = args[2];
 }
+//Währung EUR definieren
+//Währung USD definieren
+//Währung ZLOTY definieren
+
+let amountResultEur;
+
+const currencies = {
+
+  EUR: {
+    rate: 1,
+    Symbol:'€'
+  },
+  USD: {
+    rate: 1.11,
+    Symbol:'$'
+  },
+  ZLY: {
+    rate: 4.15,
+    Symbol:'Zł'
+  }
+
+
+}
+
+const amountInEur = amount / currencies[originalCurrency].rate;
+
+amountResultEur = amountInEur * currencies[targetCurrency].rate;
+
+console.log(amountResultEur + currencies[targetCurrency].Symbol);
